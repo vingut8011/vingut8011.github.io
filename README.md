@@ -19,4 +19,5 @@ https://vingut8011.github.io/
 (Insert screenshot here after running locally)
 
 ## AI Assistant Chat Link
-PASTE_YOUR_AI_CHAT_LINK_HERE
+https://chatgpt.com/share/6970d82f-a5dc-8003-a3f5-d92661c8e44f
+
