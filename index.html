@@ -99,9 +99,42 @@
     </form>
 
 </section>
-
 <script>
-   
+let userName = "vingut8011";
+
+if (userName) {
+    const welcome = document.createElement("h2");
+    welcome.innerText = "Welcome, " + userName + "!";
+    document.body.insertBefore(welcome, document.body.firstChild);
+}
+
+// Create new paragraph
+const newParagraph = document.createElement("p");
+newParagraph.textContent = "Hello vingut8011! This was added using JavaScript.";
+document.getElementById("contact").appendChild(newParagraph);
+
+// Modify existing elements
+const heading = document.querySelector("#about h2");
+heading.textContent = "vingut8011 DOM Manipulation Project";
+
+const aboutText = document.querySelector("#about p");
+aboutText.style.border = "2px solid black";
+aboutText.style.padding = "10px";
+
+// Timed message
+setTimeout(() => {
+    const msg = document.createElement("p");
+    msg.textContent = "This message appeared after 3 seconds.";
+    document.body.prepend(msg);
+}, 3000);
+
+// Form submission message
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Message sent successfully!");
+});
 </script>
 
 </body>
