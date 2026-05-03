@@ -1,141 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav {
-            background: #555;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 8px;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-        }
-
-        button {
-            padding: 10px 15px;
-            background: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persistent Storage Project</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
+<div id="welcomeModal" class="modal">
+  <div class="modal-content">
+    <h2>Welcome</h2>
+    <p>This page is a work in progress.</p>
+    <button id="closeModal">Close</button>
+  </div>
+</div>
+
 <header>
-    <h1>Vincent Gutierrez Portfolio</h1>
+  <h1>Persistent Storage Project</h1>
 </header>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
+<label>
+  <input type="checkbox" id="darkModeToggle">
+  Dark Mode
+</label>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>Hello! My name is Vincent Gutierrez. I am currently learning web development and building my skills in HTML, CSS, and JavaScript. I enjoy creating websites and learning how to make them interactive and user-friendly.</p>
+<section>
+  <h2>Contact Form</h2>
+
+  <form>
+    <input type="text" placeholder="Your Name"><br><br>
+
+    <input type="email" placeholder="Your Email"><br><br>
+
+    <textarea placeholder="Your Message"></textarea><br><br>
+
+    <button type="submit" class="tooltip">
+      Submit
+      <span class="tooltip-text">Click to send your message!</span>
+    </button>
+  </form>
 </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-
-    <p>Here are some of my GitHub projects:</p>
-
-    <a href="#">Project 1</a><br><br>
-    <a href="#">Project 2</a><br><br>
-    <a href="#">Project 3</a>
-
-</section>
-
-<section id="contact">
-    <h2>Contact Me</h2>
-
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-    </form>
-
-</section>
-<script>
-let userName = "vingut8011";
-
-if (userName) {
-    const welcome = document.createElement("h2");
-    welcome.innerText = "Welcome, " + userName + "!";
-    document.body.insertBefore(welcome, document.body.firstChild);
-}
-
-// Create new paragraph
-const newParagraph = document.createElement("p");
-newParagraph.textContent = "Hello vingut8011! This was added using JavaScript.";
-document.getElementById("contact").appendChild(newParagraph);
-
-// Modify existing elements
-const heading = document.querySelector("#about h2");
-heading.textContent = "vingut8011 DOM Manipulation Project";
-
-const aboutText = document.querySelector("#about p");
-aboutText.style.border = "2px solid black";
-aboutText.style.padding = "10px";
-
-// Timed message
-setTimeout(() => {
-    const msg = document.createElement("p");
-    msg.textContent = "This message appeared after 3 seconds.";
-    document.body.prepend(msg);
-}, 3000);
-
-// Form submission message
-const form = document.querySelector("form");
-
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Message sent successfully!");
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

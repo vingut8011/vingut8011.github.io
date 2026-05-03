@@ -1,35 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll(".project");
-    const universityResources = document.getElementById("universityResources");
-    const personalProjects = document.getElementById("personalProjects");
+// Close modal
+const modal = document.getElementById("welcomeModal");
+const closeModal = document.getElementById("closeModal");
 
-    if (projects.length < 3) {
-        universityResources.style.display = "block";
-        personalProjects.style.display = "block";
-    } else {
-        universityResources.style.display = "none";
-        personalProjects.style.display = "block";
-    }
+closeModal.addEventListener("click", function () {
+  modal.style.display = "none";
+});
 
-    const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub"];
-    const skillsList = document.getElementById("skillsList");
+// Dark mode localStorage
+const darkModeToggle = document.getElementById("darkModeToggle");
 
-    for (let i = 0; i < skills.length; i++) {
-        const li = document.createElement("li");
-        li.textContent = skills[i];
-        skillsList.appendChild(li);
-    }
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark-mode");
+  darkModeToggle.checked = true;
+}
 
-    const toggle = document.getElementById("darkModeToggle");
-    toggle.addEventListener("change", function () {
-        document.body.classList.toggle("dark-mode");
-    });
-
-    const form = document.getElementById("contactForm");
-    const nameInput = document.getElementById("name");
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        alert("Thank you, " + nameInput.value + ", your message has been sent!");
-    });
+darkModeToggle.addEventListener("change", function () {
+  if (darkModeToggle.checked) {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("darkMode", "disabled");
+  }
 });
